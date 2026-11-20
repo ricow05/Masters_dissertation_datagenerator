@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datagen"
+version = "0.3.0"
+description = "Parent-child data generator that satisfies constant selection rules, and a separate error injector."
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pandas>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+notebook = ["matplotlib>=3.8", "ipykernel>=6", "notebook>=7"]
+
+[project.scripts]
+datagen = "datagen.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["datagen*"]
